@@ -16,7 +16,7 @@ vim.keymap.set('n', '<leader>tv', '', { desc = 'Vertical' })
 vim.keymap.set('n', '<leader>th', '', { desc = 'Horizontal' })
 
 
--- WINDOWS
+-- WINDOW
 vim.keymap.set('n', '<leader>wv', '<cmd>vsplit<CR>', { desc = 'Split vertically' })
 vim.keymap.set('n', '<leader>ws', '<cmd>split<CR>', { desc = 'Split horizontally' })
 vim.keymap.set('n', '<leader>wd', '<cmd>close<CR>', { desc = 'Delete window' })
@@ -33,3 +33,6 @@ vim.keymap.set('n', '<C-Right>', '<cmd>vertical resize +2<CR>', { desc = 'Increa
 
 -- MASON
 vim.keymap.set('n', '<leader>cm', '<cmd>Mason<CR>', { desc = 'Mason' }) -- open mason
+
+-- KEYMAP
+vim.keymap.set({'i', 'n', 'v'}, '<CapsLock>', '<Esc>', { desc = 'CapsLock as Escape' })
