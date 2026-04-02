@@ -11,6 +11,10 @@ vim.keymap.set('n', '<leader>u', '', { desc = 'UI' })
 vim.keymap.set('n', '<leader>t', '', { desc = 'Term' })
 vim.keymap.set('n', '<leader>w', '', { desc = 'Window' })
 vim.keymap.set('n', '<leader>b', '', { desc = 'Tab' })
+vim.keymap.set('n', '<leader>tf', '', { desc = 'Float' })
+vim.keymap.set('n', '<leader>tv', '', { desc = 'Vertical' })
+vim.keymap.set('n', '<leader>th', '', { desc = 'Horizontal' })
+
 
 -- WINDOWS
 vim.keymap.set('n', '<leader>wv', '<cmd>vsplit<CR>', { desc = 'Split vertically' })
