@@ -14,6 +14,7 @@ vim.keymap.set('n', '<leader>b', '', { desc = 'Tab' })
 vim.keymap.set('n', '<leader>tf', '', { desc = 'Float' })
 vim.keymap.set('n', '<leader>tv', '', { desc = 'Vertical' })
 vim.keymap.set('n', '<leader>th', '', { desc = 'Horizontal' })
+vim.keymap.set('n', '<leader>a', '', { desc = 'AI' })
 
 
 -- WINDOW

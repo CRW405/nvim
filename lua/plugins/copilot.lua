@@ -3,4 +3,5 @@ return {
     event = "InsertEnter",
     vim.keymap.set("i", "<C-Space>", '<Plug>(copilot-suggest)', { desc = "Trigger Copilot Suggest" }),
 
+    
 }
