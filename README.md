@@ -2,8 +2,8 @@
 
 ## Notes
 - format doc // mason?
-- disable copilot
 - disable caps lock, rebind // more complicated than anticipated
-- open cwd in oil
+- open files cwd in oil
 - fix toggleterm windowing issues // find more ergonomic motions?
-- fix toggleterm shading / coloring
+- fix toggleterm shading / coloring // maybe make a toggle, sometimes better
+- make toggleterm open at files cwd

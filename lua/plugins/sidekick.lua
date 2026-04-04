@@ -5,7 +5,7 @@ return {
     cli = {
       mux = {
         backend = "tmux",
-        enabled = true,
+        enabled = false,
       },
     },
   },
@@ -73,5 +73,40 @@ return {
     --   function() require("sidekick.cli").toggle({ name = "claude", focus = true }) end,
     --   desc = "Sidekick Toggle Claude",
     -- },
+    {
+      "<S-Tab>",
+      function()
+        local name = vim.api.nvim_buf_get_name(0)
+        if name:match("sidekick") then
+          return "<CR>"
+        end
+        return "<S-Tab>"
+      end,
+      expr = true,
+      mode = { "i" },
+      desc = "Insert newline (Shift-Tab) in Sidekick messages",
+    },
+    {
+      "<Esc>",
+      function()
+        local name = vim.api.nvim_buf_get_name(0)
+        if name:match("sidekick") then
+          vim.cmd("stopinsert")
+          require("sidekick.cli").focus()
+        else
+          local m = vim.fn.mode()
+          local keys
+          if m == "t" then
+            keys = vim.api.nvim_replace_termcodes("<C-\\><C-n>", true, false, true)
+          else
+            keys = vim.api.nvim_replace_termcodes("<Esc>", true, false, true)
+          end
+          vim.api.nvim_feedkeys(keys, "n", true)
+        end
+      end,
+      mode = { "i", "t" },
+      desc = "Exit input and focus Sidekick for navigation/yank",
+    },
+
   },
 }
