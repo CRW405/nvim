@@ -8,7 +8,7 @@ return {
   },
   keys = {
     { "<leader>e", "<cmd>Neotree toggle<cr>", desc = "Explorer (root)" },
-    { "<leader>E", "<cmd>Neotree toggle reveal<cr>", desc = "Explorer (reveal file)" },
+    -- { "<leader>E", "<cmd>Neotree toggle reveal<cr>", desc = "Explorer (reveal file)" },
   },
   opts = {
     close_if_last_window = true,

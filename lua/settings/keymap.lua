@@ -15,6 +15,8 @@ vim.keymap.set('n', '<leader>tf', '', { desc = 'Float' })
 vim.keymap.set('n', '<leader>tv', '', { desc = 'Vertical' })
 vim.keymap.set('n', '<leader>th', '', { desc = 'Horizontal' })
 vim.keymap.set('n', '<leader>a', '', { desc = 'AI' })
+vim.keymap.set('n', '<leader>g', '', { desc = 'Git' })
+vim.keymap.set('n', '<leader>s', '', { desc = 'Search' })
 
 
 -- WINDOW
