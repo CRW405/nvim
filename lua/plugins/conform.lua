@@ -6,24 +6,35 @@ return {
 			lua = { "stylua" },
 			python = { "black" },
 			go = { "gofmt" },
-			c = { "clang_format -style='{BasedOnStyle: LLVM, UseTab: ForIndentation, TabWidth:4, IndentWidth:4}'" },
-			cpp = { "clang_format -style='{BasedOnStyle: LLVM, UseTab: ForIndentation, TabWidth:4, IndentWidth:4}'" },
-			javascript = { "prettier --use-tabs" },
-			typescript = { "prettier --use-tabs" },
-			css = { "prettier --use-tabs" },
-			html = { "prettier --use-tabs" },
+			c = { "clang-format" },
+			cpp = { "clang-format" },
+			javascript = { "prettier" },
+			typescript = { "prettier" },
+			css = { "prettier" },
+			html = { "prettier" },
 		},
+		formatters = {
+			["clang-format"] = {
+				prepend_args = { "-style={BasedOnStyle: LLVM, IndentWidth: 4, TabWidth: 4, UseTab: ForIndentation}" },
+			},
+			prettier = {
+				prepend_args = { "--use-tabs" },
+			},
+		},
+	},
+	config = function(_, opts)
+		require("conform").setup(opts)
 
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			pattern = "*",
 			callback = function(args)
 				require("conform").format({ bufnr = args.buf })
 			end,
-		}),
+		})
 
 		vim.keymap.set("n", "<leader>cf", function()
 			vim.notify("Formatting file...", vim.log.levels.INFO)
 			require("conform").format({ bufnr = vim.api.nvim_get_current_buf() })
-		end, { desc = "Format File" }),
-	},
+		end, { desc = "Format File" })
+	end,
 }
