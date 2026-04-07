@@ -3,11 +3,14 @@ vim.opt.nu = true -- line number
 vim.opt.relativenumber = false -- relative line number
 vim.opt.termguicolors = true -- enable 24-bit RGB colors
 vim.opt.cursorline = true -- highlight under cursor
--- vim.opt.splitbelow = true -- open split
--- vim.opt.splitright = true -- open split
+vim.opt.splitbelow = true -- open split
+vim.opt.splitright = true -- open split
 -- vim.opt.signcolumn = "yes" -- column
 -- vim.opt.colorcolumn = "" -- column
-vim.opt.showmode = true -- mode hint
+vim.opt.showmode = false -- mode hint
+vim.opt.showcmd = false -- command hint
+vim.opt.cmdheight = 0 -- command line height
+vim.opt.shortmess:append("F") -- disable file info when editing
 
 -- TOOLS
 vim.opt.spell = true -- spelling
