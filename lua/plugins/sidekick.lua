@@ -125,18 +125,18 @@ return {
 			mode = { "i", "t" },
 			desc = "Exit input and focus Sidekick for navigation/yank",
 		},
-		{
-			"<leader>ct",
-			function()
-				if vim.g.copilot_enabled == 1 then
-					vim.cmd("Copilot disable")
-					vim.notify("Copilot Suggestions Disabled.", vim.log.levels.INFO)
-				else
-					vim.cmd("Copilot enable")
-					vim.notify("Copilot Suggestions Enabled.", vim.log.levels.INFO)
-				end
-			end,
-			desc = "Toggle Copilot",
-		},
+		-- {
+		-- 	"<leader>ct",
+		-- 	function()
+		-- 		if vim.g.copilot_enabled == 1 then
+		-- 			vim.cmd("Copilot disable")
+		-- 			vim.notify("Copilot Suggestions Disabled.", vim.log.levels.INFO)
+		-- 		else
+		-- 			vim.cmd("Copilot enable")
+		-- 			vim.notify("Copilot Suggestions Enabled.", vim.log.levels.INFO)
+		-- 		end
+		-- 	end,
+		-- 	desc = "Toggle Copilot",
+		-- },
 	},
 }
