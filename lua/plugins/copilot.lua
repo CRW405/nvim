@@ -1,4 +1,5 @@
 vim.g.copilot_enabled = 0
+vim.g.copilot_no_tab_map = true
 
 return {
 	"github/copilot.vim",
@@ -6,7 +7,7 @@ return {
 	vim.keymap.set("i", "<C-Space>", "<Plug>(copilot-suggest)", { desc = "Trigger Copilot Suggest" }),
 	vim.keymap.set("i", "<C-Tab>", "<Plug>(copilot-next)", { desc = "Next Copilot Suggestion" }),
 	vim.keymap.set("i", "<C-S-Tab>", "<Plug>(copilot-previous)", { desc = "Previous Copilot Suggestion" }),
-	vim.keymap.set("i", "<S-Tab>", "<Plug>(copilot-accept)", { desc = "Accept Copilot Suggestion" }),
+	vim.keymap.set("i", "<Tab>", "<Plug>(copilot-accept)", { desc = "Accept Copilot Suggestion" }),
 
 	vim.keymap.set("n", "<leader>ct", function()
 		if vim.g.copilot_enabled == 1 then
