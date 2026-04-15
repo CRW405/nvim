@@ -11,6 +11,7 @@ vim.opt.showmode = false -- mode hint
 vim.opt.showcmd = false -- command hint
 vim.opt.cmdheight = 0 -- command line height
 vim.opt.shortmess:append("F") -- disable file info when editing
+vim.opt.wrap = false
 
 -- TOOLS
 vim.opt.spell = true -- spelling
