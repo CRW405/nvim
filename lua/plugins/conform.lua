@@ -12,6 +12,7 @@ return {
 			typescript = { "prettier" },
 			css = { "prettier" },
 			html = { "prettier" },
+			qml = { "prettier" },
 		},
 		formatters = {
 			["clang-format"] = {
