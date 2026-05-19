@@ -12,8 +12,15 @@ return {
 			typescript = { "prettier" },
 			css = { "prettier" },
 			html = { "prettier" },
+			qml = { "qmlformat" },
+			qmljs = { "qmlformat" },
 		},
 		formatters = {
+			qmlformat = {
+				command = "qmlformat",
+				args = { "--no-sort", "-i", "$FILENAME" },
+				stdin = false,
+			},
 			["clang-format"] = {
 				prepend_args = { "-style={BasedOnStyle: LLVM, IndentWidth: 4, TabWidth: 4, UseTab: ForIndentation}" },
 			},
