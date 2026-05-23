@@ -8,6 +8,8 @@ return {
 			go = { "gofmt" },
 			c = { "clang-format" },
 			cpp = { "clang-format" },
+			hc = { "clang-format" },
+			holyc = { "clang-format" },
 			javascript = { "prettier" },
 			typescript = { "prettier" },
 			css = { "prettier" },
@@ -18,7 +20,7 @@ return {
 		formatters = {
 			qmlformat = {
 				command = "qmlformat",
-				args = { "--no-sort", "-i", "$FILENAME" },
+				args = { "--no-sort", "-i", "$FILENAME" }, -- supposed to prevent moving of TODO comments but doesnt work
 				stdin = false,
 			},
 			["clang-format"] = {
@@ -30,6 +32,11 @@ return {
 		},
 	},
 	config = function(_, opts)
+		vim.filetype.add({
+			extension = {
+				hc = "holyc",
+			},
+		})
 		require("conform").setup(opts)
 
 		vim.api.nvim_create_autocmd("BufWritePre", {
