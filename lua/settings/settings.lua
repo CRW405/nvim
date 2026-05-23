@@ -14,7 +14,7 @@ vim.opt.shortmess:append("F") -- disable file info when editing
 vim.opt.wrap = false
 
 -- TOOLS
-vim.opt.spell = true -- spelling
+vim.opt.spell = false -- spelling
 vim.opt.spelllang = "en_us" -- spelling language
 vim.opt.clipboard = "unnamedplus" -- use system clipboard
 vim.opt.completeopt = { "menu", "menuone", "noselect" } -- ???
