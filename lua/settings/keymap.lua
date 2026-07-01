@@ -35,3 +35,17 @@ vim.keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "Increa
 
 -- MASON
 vim.keymap.set("n", "<leader>cm", "<cmd>Mason<CR>", { desc = "Mason" }) -- open mason
+
+-- TUI ESC
+vim.api.nvim_create_autocmd("TermOpen", {
+	pattern = "*",
+	callback = function(args)
+		local buf = args.buf
+		-- in terminal mode, map Ctrl-Q to send Esc to the running program
+		vim.keymap.set("t", "<C-q>", "<Esc>", {
+			buffer = buf,
+			noremap = true,
+			silent = true,
+		})
+	end,
+})
