@@ -24,7 +24,15 @@ return {
 				stdin = false,
 			},
 			["clang-format"] = {
-				prepend_args = { "-style={BasedOnStyle: LLVM, IndentWidth: 4, TabWidth: 4, UseTab: ForIndentation}" },
+				prepend_args = {
+					"-style={BasedOnStyle: LLVM, "
+						.. "IndentWidth: 4, "
+						.. "TabWidth: 4, "
+						.. "UseTab: ForIndentation, "
+						.. "ColumnLimit: 0, "
+						.. "AlignArrayOfStructures: Left, "
+						.. "Cpp11BracedListStyle: false}",
+				},
 			},
 			prettier = {
 				prepend_args = { "--use-tabs" },
