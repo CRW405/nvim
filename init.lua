@@ -1,27 +1,54 @@
-local function load_plugins()
-	local fn = vim.fn
-	local plugin_dir = fn.stdpath("config") .. "/lua/plugins"
+-- UI
+vim.o.number = true
+vim.o.relativenumber = false
+vim.o.laststatus = 3
+vim.o.cmdheight = 1
+vim.o.termguicolors = true
+vim.o.cursorline = true
+vim.o.showmode = true
+vim.o.showcmd = false
+vim.o.signcolumn = "auto" -- "yes" -- not sure what this actually does
+vim.o.scrolloff = 5
+vim.o.ruler = false
+vim.o.wrap = false
+vim.o.linebreak = true
+vim.o.background = "dark"
+vim.o.foldcolumn = "1"
+vim.o.conceallevel = 0
+vim.o.list = false
 
-	for _, file in ipairs(fn.readdir(plugin_dir)) do
-		if file:match(".lua$") then
-			local plugin_name = file:sub(1, -5) -- Removes the .lua extension
-			require("plugins." .. plugin_name)
-		end
-	end
-end
+-- CONFIG
+vim.o.undofile = true
+vim.o.autoread = true
+vim.o.confirm = true
+vim.o.hidden = true
+vim.o.formatoptions = "tcq"
+vim.o.virtualedit = 'block'
+vim.o.mouse = 'a'
+vim.o.clipboard = 'unnamedplus'
+vim.o.timeout = true
+vim.o.splitbelow = true
+vim.o.splitright = true
+vim.o.timeoutlen = 1000
+vim.o.updatetime = 50
+vim.o.wildmenu = true
+vim.o.wildmode = 'longest:full,full'
+vim.o.spell = false
+vim.o.spelllang = "en_us" 
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
-local function load_settings()
-	local fn = vim.fn
-	local settings_dir = fn.stdpath("config") .. "/lua/settings"
+-- SEARCH
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.hlsearch = true 
+vim.o.incsearch = true
+vim.o.wrapscan = true 
 
-	for _, file in ipairs(fn.readdir(settings_dir)) do
-		if file:match(".lua$") then
-			local setting_name = file:sub(1, -5) -- Removes the .lua extension
-			require("settings." .. setting_name)
-		end
-	end
-end
-
-load_settings()
-require("lazy-bootstrap")
-load_plugins()
+-- TABS
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
+vim.o.softtabstop = 4
+vim.o.autoindent = true
+vim.o.smartindent = true
+vim.o.smarttab = true
