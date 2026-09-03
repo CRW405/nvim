@@ -2,7 +2,7 @@
 vim.o.number = true
 vim.o.relativenumber = false
 vim.o.laststatus = 3
-vim.o.cmdheight = 1
+vim.o.cmdheight = 0
 vim.o.termguicolors = true
 vim.o.cursorline = true
 vim.o.showmode = true

@@ -31,6 +31,8 @@ return {
 						.. "UseTab: ForIndentation, "
 						.. "ColumnLimit: 0, "
 						.. "AlignArrayOfStructures: Left, "
+						.. "AlignConsecutiveAssignments: {Enabled: true, AcrossEmptyLines: false, AcrossComments: false}, "
+						.. "AlignConsecutiveDeclarations: {Enabled: true, AcrossEmptyLines: false, AcrossComments: false}, "
 						.. "Cpp11BracedListStyle: false}",
 				},
 			},
