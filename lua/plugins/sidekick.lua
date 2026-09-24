@@ -1,5 +1,3 @@
-vim.g.copilot_enabled = 0
-
 return {
 	"folke/sidekick.nvim",
 	opts = {
@@ -104,39 +102,5 @@ return {
 			mode = { "i" },
 			desc = "Insert newline (Shift-Tab) in Sidekick messages",
 		},
-		{
-			"<Esc>",
-			function()
-				local name = vim.api.nvim_buf_get_name(0)
-				if name:match("sidekick") then
-					vim.cmd("stopinsert")
-					require("sidekick.cli").focus()
-				else
-					local m = vim.fn.mode()
-					local keys
-					if m == "t" then
-						keys = vim.api.nvim_replace_termcodes("<C-\\><C-n>", true, false, true)
-					else
-						keys = vim.api.nvim_replace_termcodes("<Esc>", true, false, true)
-					end
-					vim.api.nvim_feedkeys(keys, "n", true)
-				end
-			end,
-			mode = { "i", "t" },
-			desc = "Exit input and focus Sidekick for navigation/yank",
-		},
-		-- {
-		-- 	"<leader>ct",
-		-- 	function()
-		-- 		if vim.g.copilot_enabled == 1 then
-		-- 			vim.cmd("Copilot disable")
-		-- 			vim.notify("Copilot Suggestions Disabled.", vim.log.levels.INFO)
-		-- 		else
-		-- 			vim.cmd("Copilot enable")
-		-- 			vim.notify("Copilot Suggestions Enabled.", vim.log.levels.INFO)
-		-- 		end
-		-- 	end,
-		-- 	desc = "Toggle Copilot",
-		-- },
 	},
 }
