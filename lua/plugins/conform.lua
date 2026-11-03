@@ -17,11 +17,22 @@ return {
 			qmljs = { "qmlformat" },
 			racket = { "racketfmt" },
 			scheme = { "schemat" },
-			lisp = { "schemat" },
+			lisp = { "clfmt" },
+			commonlisp = { "clfmt" },
 		},
 		formatters = {
+			racketfmt = {
+				command = "raco",
+				args = { "fmt" },
+				stdin = true,
+			},
 			schemat = {
 				command = "schemat",
+				args = {},
+				stdin = true,
+			},
+			clfmt = {
+				command = "clfmt",
 				args = {},
 				stdin = true,
 			},
