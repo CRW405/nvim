@@ -15,8 +15,16 @@ return {
 			html = { "prettier" },
 			qml = { "qmlformat" },
 			qmljs = { "qmlformat" },
+			racket = { "racketfmt" },
+			scheme = { "schemat" },
+			lisp = { "schemat" },
 		},
 		formatters = {
+			schemat = {
+				command = "schemat",
+				args = {},
+				stdin = true,
+			},
 			qmlformat = {
 				command = "qmlformat",
 				args = { "--no-sort", "-i", "$FILENAME" }, -- supposed to prevent moving of TODO comments but doesnt work

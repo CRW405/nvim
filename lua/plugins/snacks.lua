@@ -20,7 +20,7 @@ return {
 		statuscolumn = { enabled = true },
 		words = { enabled = true },
 		-- additions:
-		image = { enabled = false },
+		image = { enabled = true },
 		styles = {
 			notification = {
 				-- wo = { wrap = true } -- Wrap notifications
