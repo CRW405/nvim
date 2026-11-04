@@ -9,6 +9,7 @@ return {
 			c = { "clang-format" },
 			cpp = { "clang-format" },
 			hc = { "clang-format" },
+			glsl = { "clang-format" },
 			javascript = { "prettier" },
 			typescript = { "prettier" },
 			css = { "prettier" },
