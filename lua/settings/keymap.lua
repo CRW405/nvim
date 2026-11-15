@@ -59,7 +59,7 @@ M.plugin_keys["telescope.nvim"] = {
 }
 
 M.plugin_keys["toggleterm.nvim"] = {
-	{ "<c-/>", "<cmd>ToggleTerm dir=%:p:h<cr>", desc = "ToggleTerm: Toggle terminal" },
+	{ "<c-/>", "<cmd>ToggleTerm dir=%:p:h<cr>", desc = "ToggleTerm: Toggle terminal", mode = { "n", "t" } },
 	{ "<leader>tf1", "<cmd>ToggleTerm 1 dir=%:p:h direction=float<cr>", desc = "ToggleTerm: Float terminal 1" },
 	{
 		"<leader>th1",
@@ -705,7 +705,20 @@ local function toggle_peek()
 end
 vim.keymap.set({ "n", "i", "x" }, "<C-c>", toggle_peek, { desc = "LSP: Peek docs (toggle)" })
 
--- LSP: show the diagnostic under the cursor.
+local line_diagnostic_win
+local function toggle_line_diagnostics()
+	if line_diagnostic_win and vim.api.nvim_win_is_valid(line_diagnostic_win) then
+		vim.api.nvim_win_close(line_diagnostic_win, true)
+		line_diagnostic_win = nil
+		return
+	end
+
+	local _, win = vim.diagnostic.open_float(0, { scope = "line" })
+	line_diagnostic_win = win
+end
+vim.keymap.set({ "n", "i", "x" }, "<C-d>", toggle_line_diagnostics, {
+	desc = "Diagnostics: Peek line diagnostics (toggle)",
+})
 vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "LSP: Show line diagnostics" })
 
 -- Snacks: toggle editor options and UI features.
