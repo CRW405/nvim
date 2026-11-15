@@ -719,6 +719,7 @@ end
 vim.keymap.set({ "n", "i", "x" }, "<C-d>", toggle_line_diagnostics, {
 	desc = "Diagnostics: Peek line diagnostics (toggle)",
 })
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP: Code action" })
 vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "LSP: Show line diagnostics" })
 
 -- Snacks: toggle editor options and UI features.
