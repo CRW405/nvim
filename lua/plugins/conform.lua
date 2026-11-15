@@ -1,3 +1,6 @@
+-- conform.nvim: runs formatters on save and gives you a format command.
+-- This handles code formatting without needing a separate formatter plugin per language.
+
 return {
 	"stevearc/conform.nvim",
 	opts = {
@@ -66,13 +69,11 @@ return {
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			pattern = "*",
 			callback = function(args)
+				if vim.b[args.buf].project_formatting then
+					return
+				end
 				require("conform").format({ bufnr = args.buf })
 			end,
 		})
-
-		vim.keymap.set("n", "<leader>cf", function()
-			vim.notify("Formatting file...", vim.log.levels.INFO)
-			require("conform").format({ bufnr = vim.api.nvim_get_current_buf() })
-		end, { desc = "Format File" })
 	end,
 }

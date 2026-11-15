@@ -1,3 +1,5 @@
+-- lualine.nvim: bottom status line with mode, file info, diagnostics, and branch status.
+
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },

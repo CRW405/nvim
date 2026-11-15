@@ -1,3 +1,5 @@
+-- nvim-treesitter-textobjects: adds smarter text objects based on syntax trees.
+
 return {
 	"nvim-treesitter/nvim-treesitter-textobjects",
 	branch = "main",

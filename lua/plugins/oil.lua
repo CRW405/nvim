@@ -1,3 +1,5 @@
+-- oil.nvim: directory browser that treats folders like normal Neovim buffers.
+
 return {
 	"stevearc/oil.nvim",
 	dependencies = { { "echasnovski/mini.icons", opts = {} } },
