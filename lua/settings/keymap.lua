@@ -722,6 +722,15 @@ vim.keymap.set({ "n", "i", "x" }, "<C-d>", toggle_line_diagnostics, {
 })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP: Code action" })
 vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "LSP: Show line diagnostics" })
+local diagnostic_signs = vim.diagnostic.config().signs
+local diagnostic_signs_enabled = diagnostic_signs ~= false
+if type(diagnostic_signs) == "table" then
+	diagnostic_signs_enabled = diagnostic_signs.enabled ~= false
+end
+vim.keymap.set("n", "<leader>uD", function()
+	diagnostic_signs_enabled = not diagnostic_signs_enabled
+	vim.diagnostic.config({ signs = diagnostic_signs_enabled })
+end, { desc = "Diagnostics: Toggle sign flags" })
 
 -- Snacks: toggle editor options and UI features.
 vim.api.nvim_create_autocmd("User", {
