@@ -463,9 +463,10 @@ M.neotree_window_mappings = {
 	["<cr>"] = "open",
 }
 
--- Blink: Ctrl-K toggles signature help while typing.
+-- Blink: Enter accepts the selected suggestion; Tab/Ctrl-K keep their super-tab behavior.
 M.blink_keymap = {
 	preset = "super-tab",
+	["<CR>"] = { "accept", "fallback" },
 	["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
 }
 
