@@ -11,6 +11,7 @@ return {
 			go = { "gofmt" },
 			c = { "clang-format" },
 			cpp = { "clang-format" },
+			rust = { "rustfmt" },
 			hc = { "clang-format" },
 			glsl = { "clang-format" },
 			javascript = { "prettier" },

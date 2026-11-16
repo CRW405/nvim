@@ -7,6 +7,14 @@ return {
 		vim.lsp.config("lua_ls", {
 			settings = { Lua = { diagnostics = { globals = { "vim", "Snacks" } } } },
 		})
-		vim.lsp.enable({ "lua_ls", "pyright", "clangd" })
+		vim.lsp.config("rust_analyzer", {
+			settings = {
+				["rust-analyzer"] = {
+					cargo = { allFeatures = true },
+					check = { command = "clippy" },
+				},
+			},
+		})
+		vim.lsp.enable({ "lua_ls", "pyright", "clangd", "rust_analyzer" })
 	end,
 }
