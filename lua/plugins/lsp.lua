@@ -1,4 +1,5 @@
 -- nvim-lspconfig: provides language server settings; Neovim starts them for matching files.
+-- mason-lspconfig (lua/plugins/mason.lua) enables every server installed through Mason.
 
 return {
 	"neovim/nvim-lspconfig",
@@ -15,6 +16,5 @@ return {
 				},
 			},
 		})
-		vim.lsp.enable({ "lua_ls", "pyright", "clangd", "rust_analyzer" })
 	end,
 }

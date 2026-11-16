@@ -4,8 +4,18 @@
 return {
 	"stevearc/conform.nvim",
 	opts = {
+		-- Conform skips formatters whose command is not installed. When none are
+		-- available for a buffer, let an attached LSP (e.g. ruff, taplo) format it.
+		default_format_opts = { lsp_format = "fallback" },
 		formatters_by_ft = {
-			["*"] = { "trim_whitespace" },
+			-- Trim whitespace by default, unless an attached LSP can format the
+			-- buffer; in that case let the LSP handle it (see default_format_opts).
+			["*"] = function(bufnr)
+				if #vim.lsp.get_clients({ bufnr = bufnr, method = "textDocument/formatting" }) > 0 then
+					return {}
+				end
+				return { "trim_whitespace" }
+			end,
 			lua = { "stylua" },
 			python = { "black" },
 			go = { "gofmt" },
